@@ -4,7 +4,7 @@
   "description": "Calculates similarity between two strings",
   "main": "/dist/string-similarity.js",
   "scripts": {
-    "test": "jasmine"
+    "test": "istanbul cover --include-all-sources jasmine-node spec"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,8 @@
     "@types/chai": "^4.1.4",
     "@types/jasmine": "^2.8.8",
     "chai": "^4.1.2",
+    "istanbul": "^0.4.5",
+    "jasmine-node": "^1.15.0",
     "typescript": "^2.9.2"
   }
 }

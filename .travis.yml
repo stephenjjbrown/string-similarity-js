@@ -2,7 +2,9 @@ language: node_js
 node_js:
 - '10.4'
 before_install:
+- pip install --user codecov
 - npm install -g typescript
-- npm install -g jasmine
 script:
 - npm test
+after_success:
+- codecov --file coverage/lcov.info --disable search

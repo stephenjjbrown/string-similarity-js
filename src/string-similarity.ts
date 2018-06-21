@@ -20,7 +20,7 @@ const getStringSimilarity = (str1: string, str2: string, substringLength?: numbe
 	if (!substringLength)
 		substringLength = 2; // Assume letter pairs
 
-	if (str1.length == 0 || str2.length == 0)
+	if (str1.length === 0 || str2.length === 0)
 		return 0;
 
 	if (!caseSensitive) {

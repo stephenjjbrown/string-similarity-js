@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/stephenjjbrown/string-similarity-js.png?branch=master)](https://travis-ci.org/stephenjjbrown/string-similarity-js)
+[![codecov](https://codecov.io/gh/stephenjjbrown/string-similarity-js/branch/master/graph/badge.svg)](https://codecov.io/gh/stephenjjbrown/string-similarity-js)
 [![Wallaby.js](https://img.shields.io/badge/wallaby.js-configured-green.svg)](https://wallabyjs.com)
 
 # String Similarity

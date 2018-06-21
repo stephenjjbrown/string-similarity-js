@@ -4,7 +4,7 @@
 
 # String Similarity
 
-A simple, lightweight string similarity function based on comparing the number of substrings in common between any two strings. Returns a score between 0 and 1 indicated the strength of the match.
+A simple, lightweight string similarity function based on comparing the number of substrings (typically letter pairs) in common between any two strings. Returns a score between 0 and 1 indicated the strength of the match.
 
 This algorithm is most effective at detecting rearranged words or minor misspellings. It tends to be less effective with very short strings. Always returns 0 for strings <= 2 characters in length. Does not ignore punctuation or spaces.
 

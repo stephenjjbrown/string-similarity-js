@@ -1,6 +1,6 @@
 # String Similarity
 
-Lightweight-but-effective string similarity function based on comparing common substrings of a given length (usually letter pairs)
+Lightweight-but-effective string similarity function based on comparing the number of substrings in common between any two strings. Substring length is customizable (usually letter pairs works well)
 
 This algorithm is usually most effective at detecting rearranged words or slight misspellings. It tends to be less effective with very short strings.
 

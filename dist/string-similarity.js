@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var getSubstrings = function (str, substringLength) {
     var result = [];
     if (substringLength < 2 || substringLength > str.length - 1)
@@ -15,7 +17,7 @@ var getSubstrings = function (str, substringLength) {
  * @param {boolean} [caseSensitive=false] Optional. Whether you want to consider case in string matching. Default false;
  * @returns Number between 0 and 1, with 0 being a low match score.
  */
-export var getStringSimilarity = function (str1, str2, substringLength, caseSensitive) {
+exports.getStringSimilarity = function (str1, str2, substringLength, caseSensitive) {
     if (!substringLength)
         substringLength = 2; // Assume letter pairs
     if (str1.length === 0 || str2.length === 0)
@@ -42,5 +44,5 @@ export var getStringSimilarity = function (str1, str2, substringLength, caseSens
         return (result * 2) / combinedLength;
     return result;
 };
-export default getStringSimilarity;
+exports.default = exports.getStringSimilarity;
 //# sourceMappingURL=string-similarity.js.map

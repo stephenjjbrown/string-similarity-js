@@ -17,6 +17,11 @@
   },
   "homepage": "https://github.com/stephenjjbrown/string-similarity-js#readme",
   "devDependencies": {
+    "@types/chai": "^4.1.4",
+    "@types/jasmine": "^2.8.8",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "chai": "^4.1.2",
     "typescript": "^2.9.2"
   }
 }

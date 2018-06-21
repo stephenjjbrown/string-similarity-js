@@ -1,8 +1,16 @@
-# Quick String Similarity
+# String Similarity
 
-Lightweight-but-effective string similarity algorithm based on comparing common substrings of a given length (usually letter pairs)
+Lightweight-but-effective string similarity function based on comparing common substrings of a given length (usually letter pairs)
 
 This algorithm is usually most effective at detecting rearranged words or slight misspellings. It tends to be less effective with very short strings.
+
+# Usage
+
+```
+import {getStringSimilarity} from "string-similarity";
+
+getStringSimilarity("Lorem ipsum", "Ipsum lorem")
+```
 
 ## License
 

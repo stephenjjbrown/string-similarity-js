@@ -1,5 +1,5 @@
 const getSubstrings = (str: string, substringLength: number) => {
-	let result = [];
+	let result: string[] = [];
 	if (substringLength < 2 || substringLength > str.length - 1)
 		return result;
 	for (let i = 0; i < str.length - (substringLength - 1); i++) {
@@ -16,7 +16,7 @@ const getSubstrings = (str: string, substringLength: number) => {
  * @param caseSensitive Optional. Whether you want to consider case in string matching. Default false;
  * @returns Number between 0 and 1, with 0 being a low match score.
  */
-const getStringSimilarity = (str1: string, str2: string, substringLength?: number, caseSensitive?: boolean): number => {
+export const getStringSimilarity = (str1: string, str2: string, substringLength?: number, caseSensitive?: boolean): number => {
 	if (!substringLength)
 		substringLength = 2; // Assume letter pairs
 
@@ -48,3 +48,4 @@ const getStringSimilarity = (str1: string, str2: string, substringLength?: numbe
 
 	return result;
 }
+export default getStringSimilarity

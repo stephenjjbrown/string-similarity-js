@@ -6,7 +6,7 @@ This algorithm is usually most effective at detecting rearranged words or slight
 
 # Usage
 
-```
+```typescript
 import {getStringSimilarity} from "string-similarity";
 
 getStringSimilarity("Lorem ipsum", "Ipsum lorem")

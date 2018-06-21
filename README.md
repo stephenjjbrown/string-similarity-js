@@ -4,16 +4,21 @@
 
 # String Similarity
 
-Lightweight-but-effective string similarity function based on comparing the number of substrings in common between any two strings. Substring length is customizable (usually letter pairs works well)
+A simple, lightweight string similarity function based on comparing the number of substrings in common between any two strings. Returns a score between 0 and 1 indicated the strength of the match.
 
-This algorithm is usually most effective at detecting rearranged words or slight misspellings. It tends to be less effective with very short strings.
+This algorithm is most effective at detecting rearranged words or minor misspellings. It tends to be less effective with very short strings. Always returns 0 for strings <= 2 characters in length. Does not ignore punctuation or spaces.
 
 # Usage
 
 ```typescript
 import {getStringSimilarity} from "string-similarity";
 
-getStringSimilarity("Lorem ipsum", "Ipsum lorem")
+// Rearranged words
+getStringSimilarity("Lorem ipsum", "Ipsum lorem") // Returns a score of 0.9
+
+// Typos
+getStringSimilarity("The quick brown fox jumps over the lazy dog", "The quck brwn fox jumps over the lazy dog") // Returns ~0.92
+
 ```
 
 ## License

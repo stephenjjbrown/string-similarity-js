@@ -6,12 +6,8 @@ module.exports = function (wallaby) {
 		],
 	
 		tests: [
-			'test/**/*spec.js'
+			'spec/**/*spec.js'
 		],
-
-		compilers: {
-			'**/*.js': wallaby.compilers.babel()
-		},
 
 		env: {type: 'node'}
 	};

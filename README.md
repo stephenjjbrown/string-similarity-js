@@ -1,3 +1,5 @@
+[![Wallaby.js](https://img.shields.io/badge/wallaby.js-configured-green.svg)](https://wallabyjs.com)
+
 # String Similarity
 
 Lightweight-but-effective string similarity function based on comparing the number of substrings in common between any two strings. Substring length is customizable (usually letter pairs works well)

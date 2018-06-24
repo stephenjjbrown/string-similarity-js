@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var getSubstrings = function (str, substringLength) {
     var result = [];
-    if (substringLength < 2 || substringLength > str.length - 1)
-        return result;
+    // if (substringLength > str.length)
+    // 	return result;
     for (var i = 0; i < str.length - (substringLength - 1); i++) {
         result.push(str.substr(i, substringLength));
     }
@@ -19,13 +19,15 @@ var getSubstrings = function (str, substringLength) {
  */
 exports.getStringSimilarity = function (str1, str2, substringLength, caseSensitive) {
     if (!substringLength)
-        substringLength = 2; // Assume letter pairs
-    if (str1.length === 0 || str2.length === 0)
-        return 0;
+        substringLength = 2; // Assume bigrams
     if (!caseSensitive) {
         str1 = str1.toLowerCase();
         str2 = str2.toLowerCase();
     }
+    if (str1.length <= substringLength || str2.length <= substringLength)
+        return 0;
+    if (str1.length >= substringLength && str2.length >= substringLength && str1 === str2)
+        return 1;
     var substrings1 = getSubstrings(str1, substringLength), substrings2 = getSubstrings(str2, substringLength);
     var combinedLength = substrings1.length + substrings2.length;
     var result = 0;

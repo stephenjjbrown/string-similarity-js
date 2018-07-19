@@ -19,9 +19,12 @@
   "devDependencies": {
     "@types/chai": "^4.1.4",
     "@types/jasmine": "^2.8.8",
+    "babel-eslint": "^8.2.6",
     "chai": "^4.1.2",
+    "eslint": "^5.1.0",
     "istanbul": "^0.4.5",
     "jasmine-node": "^1.15.0",
+    "tslint": "^5.11.0",
     "typescript": "^2.9.2"
   }
 }

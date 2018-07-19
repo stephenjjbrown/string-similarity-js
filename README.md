@@ -13,30 +13,30 @@ It is case insensitive unless you specify case sensitivity. Does not ignore punc
 ## Usage
 
 ```typescript
-import {getStringSimilarity} from "string-similarity";
+import {stringSimilarity} from "string-similarity";
 
 // Rearranged words
-getStringSimilarity("Lorem ipsum", "Ipsum lorem")
+stringSimilarity("Lorem ipsum", "Ipsum lorem")
 // Returns a score of 0.9
 
 // Typos
-getStringSimilarity("The quick brown fox jumps over the lazy dog", "The quck brown fx jumps over the lazy dog")
+stringSimilarity("The quick brown fox jumps over the lazy dog", "The quck brown fx jumps over the lazy dog")
 // 0.92
 
 // Even more different
-getStringSimilarity("The quick brown fox jumps over the lazy dog", "The quack brain fax jomps odor the lady frog")
+stringSimilarity("The quick brown fox jumps over the lazy dog", "The quack brain fax jomps odor the lady frog")
 // 0.65
 
 // Completely different strings
-getStringSimilarity("The quick brown fox jumps over the lazy dog", "Lorem ipsum")
+stringSimilarity("The quick brown fox jumps over the lazy dog", "Lorem ipsum")
 // 0.07
 
 // Tiny strings are less effective with default settings
-getStringSimilarity("DMV", "DNV")
+stringSimilarity("DMV", "DNV")
 // Returns 0, because technically there are no bigrams in common between the two
 
 // Passing in a substring length of 1 may improve accuracy on tiny strings
-getStringSimilarity("DMV", "DNV", 1)
+stringSimilarity("DMV", "DNV", 1)
 // Returns 0.67, the percentage of letters in common between the two
 ```
 

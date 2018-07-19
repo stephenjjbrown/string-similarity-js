@@ -5,6 +5,11 @@ describe("getStringSimilarity", () => {
 	
 	it("Should return 1 for exact strings", () => {
 		expect(getStringSimilarity("String", "String")).to.equal(1)
+		expect(getStringSimilarity("So", "So", 2)).to.equal(1)
+	})
+
+	it("Should return 0 if strings are exact but substring length is larger", () => {
+		expect(getStringSimilarity("So", "So", 3)).to.equal(0)
 	})
 
 	it("Should return 0 if either string is empty", () => {
@@ -29,4 +34,3 @@ describe("getStringSimilarity", () => {
 		expect(getStringSimilarity("Lorem ipsum dolor", "Lorem ipsum dlr")).to.be.above(0.75);
 	})
 })
-//getStringSimilarity("Lorem ipsum", "Ipsum lorem")

@@ -1,5 +1,5 @@
-
-module.exports = function (wallaby) {
+/* globals module */
+module.exports = function () {
 	return {
 		files: [
 			'dist/**/*.js'

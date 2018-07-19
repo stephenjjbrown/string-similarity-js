@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/stephenjjbrown/string-similarity-js.svg?branch=master)](https://travis-ci.org/stephenjjbrown/string-similarity-js)
 [![codecov](https://codecov.io/gh/stephenjjbrown/string-similarity-js/branch/master/graph/badge.svg)](https://codecov.io/gh/stephenjjbrown/string-similarity-js)
 [![Wallaby.js](https://img.shields.io/badge/wallaby.js-configured-green.svg)](https://wallabyjs.com)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9eb54134dbbe4c879e57f1a6afedc4bf)](https://www.codacy.com/app/stephenjjbrown/string-similarity-js?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=stephenjjbrown/string-similarity-js&amp;utm_campaign=Badge_Grade)
 
 # String Similarity
 

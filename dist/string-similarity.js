@@ -9,24 +9,26 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @param {boolean} [caseSensitive=false] Optional. Whether you want to consider case in string matching. Default false;
  * @returns Number between 0 and 1, with 0 being a low match score.
  */
-exports.stringSimilarity = (str1, str2, substringLength = 2, caseSensitive = false) => {
+exports.stringSimilarity = function (str1, str2, substringLength, caseSensitive) {
+    if (substringLength === void 0) { substringLength = 2; }
+    if (caseSensitive === void 0) { caseSensitive = false; }
     if (!caseSensitive) {
         str1 = str1.toLowerCase();
         str2 = str2.toLowerCase();
     }
     if (str1.length < substringLength || str2.length < substringLength)
         return 0;
-    const map = new Map();
-    for (let i = 0; i < str1.length - (substringLength - 1); i++) {
-        const substring = str1.substr(i, substringLength);
-        map.set(substring, map.has(substring) ? map.get(substring) + 1 : 1);
+    var map = new Map();
+    for (var i = 0; i < str1.length - (substringLength - 1); i++) {
+        var substr1 = str1.substr(i, substringLength);
+        map.set(substr1, map.has(substr1) ? map.get(substr1) + 1 : 1);
     }
-    let match = 0;
-    for (let i = 0; i < str2.length - (substringLength - 1); i++) {
-        const substring = str2.substr(i, substringLength);
-        const count = map.has(substring) ? map.get(substring) : 0;
+    var match = 0;
+    for (var j = 0; j < str2.length - (substringLength - 1); j++) {
+        var substr2 = str2.substr(j, substringLength);
+        var count = map.has(substr2) ? map.get(substr2) : 0;
         if (count > 0) {
-            map.set(substring, count - 1);
+            map.set(substr2, count - 1);
             match++;
         }
     }

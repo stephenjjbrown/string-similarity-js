@@ -1,7 +1,21 @@
 {
   "name": "string-similarity-js",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Calculates similarity between two strings",
+  "keywords": [
+    "fuzzy search",
+    "string similarity",
+    "dice coefficient",
+    "dice's",
+    "sorenson-dice",
+    "fuzzy",
+    "string match",
+    "string",
+    "typos",
+    "misspell",
+    "misspelling",
+    "compare strings"
+  ],
   "main": "dist/string-similarity.js",
   "scripts": {
     "test": "istanbul cover --include-all-sources jasmine-node spec"

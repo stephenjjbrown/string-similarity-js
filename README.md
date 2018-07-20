@@ -5,16 +5,22 @@
 
 # String Similarity
 
-A simple, lightweight string similarity function based on comparing the number of substrings (typically bigrams) in common between any two strings. Returns a score between 0 and 1 indicating the strength of the match.
+A simple, lightweight (~700 bytes minified) string similarity function based on comparing the number of bigrams in common between any two strings. Returns a score between 0 and 1 indicating the strength of the match.
 
-Loosely based on the [Sørensen–Dice coefficient](https://en.wikipedia.org/wiki/Sørensen–Dice_coefficient), this algorithm is most effective at detecting rearranged words or misspellings. It tends to be less effective with very short strings unless you pass in substringLength of 1 (returning number of letters in common).
+Based on the [Sørensen–Dice coefficient](https://en.wikipedia.org/wiki/Sørensen–Dice_coefficient), this algorithm is most effective at detecting rearranged words or misspellings. It tends to be less effective with very short strings, unless perhaps you switch to comparing individual characters in common instead of bigrams.
 
-It is case insensitive unless you specify case sensitivity. Does not ignore punctuation or spaces. In some cases, removing punctuation beforehand may improve matching accuracy.
+It is case insensitive unless you specify otherwise. Does not ignore punctuation or spaces. In some cases, removing punctuation beforehand may improve accuracy.
+
+### Update
+Version 2.0 optimizes the algorithm from O(n^2) time complexity to O(n), and switches from using an array for bigrams to a Map, which was found to be substantially faster in performance tests.
 
 ## Usage
 
+### Requirements
+This library uses built-in [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) data structure for optimal speed with very large datasets. Therefore, it requires at least IE11 or a polyfill for Map.
+
 ```typescript
-import {stringSimilarity} from "string-similarity";
+import { stringSimilarity } from "string-similarity";
 
 // Rearranged words
 stringSimilarity("Lorem ipsum", "Ipsum lorem")

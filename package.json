@@ -1,6 +1,6 @@
 {
   "name": "string-similarity-js",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "Calculates similarity between two strings",
   "main": "dist/string-similarity.js",
   "scripts": {

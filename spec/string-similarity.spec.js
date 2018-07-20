@@ -2,7 +2,7 @@
 var { expect } = require("chai");
 var { stringSimilarity } = require("../dist/string-similarity");
 
-describe("getStringSimilarity", () => {
+describe("stringSimilarity", () => {
 	
 	it("Should return 1 for exact strings", () => {
 		expect(stringSimilarity("String", "String")).to.equal(1);
@@ -23,7 +23,7 @@ describe("getStringSimilarity", () => {
 		expect(stringSimilarity("TEST", "test")).to.equal(1);
 	});
 
-	it("Should be case sensitive if needed", () => {
+	it("Should be case sensitive if set", () => {
 		expect(stringSimilarity("TEST", "test", undefined, true)).to.equal(0);
 	});
 

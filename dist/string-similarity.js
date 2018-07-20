@@ -1,12 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-/* global exports */
-var getSubstrings = function (str, substringLength) {
-    var result = [];
-    for (var i = 0; i < str.length - (substringLength - 1); i++)
-        result.push(str.substr(i, substringLength));
-    return result;
-};
+/* global exports, Map */
 /**
  * Calculate similarity between two strings
  * @param {string} str1 First string to match
@@ -15,33 +9,28 @@ var getSubstrings = function (str, substringLength) {
  * @param {boolean} [caseSensitive=false] Optional. Whether you want to consider case in string matching. Default false;
  * @returns Number between 0 and 1, with 0 being a low match score.
  */
-exports.stringSimilarity = function (str1, str2, substringLength, caseSensitive) {
-    if (substringLength === void 0) { substringLength = 2; }
-    if (caseSensitive === void 0) { caseSensitive = false; }
+exports.stringSimilarity = (str1, str2, substringLength = 2, caseSensitive = false) => {
     if (!caseSensitive) {
         str1 = str1.toLowerCase();
         str2 = str2.toLowerCase();
     }
     if (str1.length < substringLength || str2.length < substringLength)
         return 0;
-    if (str1 === str2)
-        return 1;
-    var substrings1 = getSubstrings(str1, substringLength);
-    var substrings2 = getSubstrings(str2, substringLength);
-    var combinedLength = substrings1.length + substrings2.length;
-    var result = 0;
-    for (var _i = 0, substrings1_1 = substrings1; _i < substrings1_1.length; _i++) {
-        var x = substrings1_1[_i];
-        for (var i = 0; i < substrings2.length; i++) {
-            var y = substrings2[i];
-            if (x === y) {
-                result++;
-                substrings2.splice(i, 1); // Remove from consideration in rest of loop
-                break;
-            }
+    const map = new Map();
+    for (let i = 0; i < str1.length - (substringLength - 1); i++) {
+        const substring = str1.substr(i, substringLength);
+        map.set(substring, map.has(substring) ? map.get(substring) + 1 : 1);
+    }
+    let match = 0;
+    for (let i = 0; i < str2.length - (substringLength - 1); i++) {
+        const substring = str2.substr(i, substringLength);
+        const count = map.has(substring) ? map.get(substring) : 0;
+        if (count > 0) {
+            map.set(substring, count - 1);
+            match++;
         }
     }
-    return result > 0 ? (result * 2) / combinedLength : 0;
+    return (match * 2) / (str1.length + str2.length - ((substringLength - 1) * 2));
 };
 exports.default = exports.stringSimilarity;
 //# sourceMappingURL=string-similarity.js.map

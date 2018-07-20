@@ -1,11 +1,4 @@
-/* global exports */
-const getSubstrings = (str: string, substringLength: number) => {
-	const result: string[] = [];
-	for (let i = 0; i < str.length - (substringLength - 1); i++)
-		result.push(str.substr(i, substringLength));
-	return result;
-};
-
+/* global exports, Map */
 /**
  * Calculate similarity between two strings
  * @param {string} str1 First string to match
@@ -23,24 +16,22 @@ export const stringSimilarity = (str1: string, str2: string, substringLength: nu
 	if (str1.length < substringLength || str2.length < substringLength)
 		return 0;
 
-	if (str1 === str2)
-		return 1;
+	const map = new Map();
+	for (let i = 0; i < str1.length - (substringLength - 1); i++) {
+		const substring = str1.substr(i, substringLength);
+		map.set(substring, map.has(substring) ? map.get(substring) + 1 : 1);
+	}
 
-	const substrings1 = getSubstrings(str1, substringLength);
-	const substrings2 = getSubstrings(str2, substringLength);
-	const combinedLength = substrings1.length + substrings2.length;
-
-	let result = 0;
-	for (const x of substrings1)
-		for (let i = 0; i < substrings2.length; i++) {
-			const y = substrings2[i];
-			if (x === y) {
-				result++;
-				substrings2.splice(i, 1); // Remove from consideration in rest of loop
-				break;
-			}
+	let match = 0;
+	for (let i = 0; i < str2.length - (substringLength - 1); i++) {
+		const substring = str2.substr(i, substringLength);
+		const count = map.has(substring) ? map.get(substring) : 0;
+		if (count > 0) {
+			map.set(substring, count - 1);
+			match++;
 		}
+	}
 
-	return result > 0 ? (result * 2) / combinedLength : 0;
+	return (match * 2) / (str1.length + str2.length - ((substringLength - 1) * 2));
 };
 export default stringSimilarity;

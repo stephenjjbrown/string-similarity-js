@@ -12,12 +12,14 @@ Based on the [Sørensen–Dice coefficient](https://en.wikipedia.org/wiki/Søren
 It is case insensitive unless you specify otherwise. Does not ignore punctuation or spaces. In some cases, removing punctuation beforehand may improve accuracy.
 
 ### Update
-Version 2.0 optimizes the algorithm from O(n^2) time complexity to O(n), and switches from using an array for bigrams to a Map, which was found to be substantially faster in performance tests.
+Version 2.0 optimizes the algorithm from O(n<sup>2</sup>) time complexity to O(n), and switches from using an array for bigrams to a Map, which was found to be substantially faster in performance tests.
 
 ## Usage
 
 ### Requirements
-This library uses built-in [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) data structure for optimal speed with very large datasets. Therefore, it requires at least IE11 or a polyfill for Map.
+This library uses built-in [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) data structure for optimal performance. Therefore, it requires at least IE11 or a polyfill for Map.
+
+### Examples
 
 ```typescript
 import { stringSimilarity } from "string-similarity";

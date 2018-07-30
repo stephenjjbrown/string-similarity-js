@@ -22,7 +22,7 @@ This library uses built-in [Map](https://developer.mozilla.org/en-US/docs/Web/Ja
 ### Examples
 
 ```typescript
-import { stringSimilarity } from "string-similarity";
+import { stringSimilarity } from "string-similarity-js";
 
 // Rearranged words
 stringSimilarity("Lorem ipsum", "Ipsum lorem")

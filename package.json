@@ -1,6 +1,6 @@
 {
   "name": "string-similarity-js",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Calculates similarity between two strings",
   "keywords": [
     "fuzzy search",
@@ -31,14 +31,14 @@
   },
   "homepage": "https://github.com/stephenjjbrown/string-similarity-js#readme",
   "devDependencies": {
-    "@types/chai": "^4.1.4",
-    "@types/jasmine": "^2.8.8",
-    "babel-eslint": "^8.2.6",
-    "chai": "^4.1.2",
-    "eslint": "^5.1.0",
+    "@types/chai": "^4.1.7",
+    "@types/jasmine": "^3.3.9",
+    "babel-eslint": "^10.0.1",
+    "chai": "^4.2.0",
+    "eslint": "^5.14.0",
     "istanbul": "^0.4.5",
-    "jasmine-node": "^1.15.0",
-    "tslint": "^5.11.0",
-    "typescript": "^2.9.2"
+    "jasmine-node": "^1.16.2",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.3"
   }
 }

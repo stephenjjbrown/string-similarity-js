@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.stringSimilarity = void 0;
 /* global exports, Map */
 /**
  * Calculate similarity between two strings
@@ -9,7 +10,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @param {boolean} [caseSensitive=false] Optional. Whether you want to consider case in string matching. Default false;
  * @returns Number between 0 and 1, with 0 being a low match score.
  */
-exports.stringSimilarity = function (str1, str2, substringLength, caseSensitive) {
+var stringSimilarity = function (str1, str2, substringLength, caseSensitive) {
     if (substringLength === void 0) { substringLength = 2; }
     if (caseSensitive === void 0) { caseSensitive = false; }
     if (!caseSensitive) {
@@ -34,5 +35,6 @@ exports.stringSimilarity = function (str1, str2, substringLength, caseSensitive)
     }
     return (match * 2) / (str1.length + str2.length - ((substringLength - 1) * 2));
 };
+exports.stringSimilarity = stringSimilarity;
 exports.default = exports.stringSimilarity;
 //# sourceMappingURL=string-similarity.js.map

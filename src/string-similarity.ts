@@ -18,13 +18,13 @@ export const stringSimilarity = (str1: string, str2: string, substringLength: nu
 
 	const map = new Map();
 	for (let i = 0; i < str1.length - (substringLength - 1); i++) {
-		const substr1 = str1.substr(i, substringLength);
+		const substr1 = str1.substring(i, i + substringLength);
 		map.set(substr1, map.has(substr1) ? map.get(substr1) + 1 : 1);
 	}
 
 	let match = 0;
 	for (let j = 0; j < str2.length - (substringLength - 1); j++) {
-		const substr2 = str2.substr(j, substringLength);
+		const substr2 = str2.substring(j, j + substringLength);
 		const count = map.has(substr2) ? map.get(substr2) : 0;
 		if (count > 0) {
 			map.set(substr2, count - 1);
